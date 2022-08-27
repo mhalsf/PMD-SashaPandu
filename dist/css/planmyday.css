@@ -1,3 +1,37 @@
+@font-face {
+  font-family: 'AphroditeSlimText';
+  src: url("../../src/fonts/aphrodite/aphrodite_slim_text.woff2") format("woff2"), url("....//src/fonts/aphrodite/aphrodite_slim_text.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'now medium';
+  src: url("../../src/fonts/now/now-medium.woff2") format("woff2"), url("../../src/fonts/now/now-medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'now regular';
+  src: url("../../src/fonts/now/now-regular.woff2") format("woff2"), url("../../src/fonts/now/now-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -69,40 +103,6 @@ input, select, textarea {
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-}
-
-@font-face {
-  font-family: 'AphroditeSlimText';
-  src: url("../../src/fonts/aphrodite/aphrodite_slim_text.woff2") format("woff2"), url("....//src/fonts/aphrodite/aphrodite_slim_text.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'now medium';
-  src: url("../../src/fonts/now/now-medium.woff2") format("woff2"), url("../../src/fonts/now/now-medium.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'now regular';
-  src: url("../../src/fonts/now/now-regular.woff2") format("woff2"), url("../../src/fonts/now/now-regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@-webkit-keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
 }
 
 .fixed-body {
@@ -1483,7 +1483,7 @@ footer a {
   }
   .plan-my-day .minicard .pmd-ornament-flower .orm-pmd__flower-01 {
     left: 55%;
-    top: 0px;
+    top: 30px;
   }
   .plan-my-day .minicard .thanks, .plan-my-day .minicard .names {
     font-size: 55px;

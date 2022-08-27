@@ -1,0 +1,101 @@
+
+// ================================= MIXINS ================================ //
+@mixin section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} 
+@mixin titlelatin ($fontSize: 30px, $color: $greyColor){
+    font-family: 'AphroditeSlimText';
+    font-size: $fontSize;
+    color: $color;
+    font-weight: 400;
+}
+@mixin dividerRight ($line: right, $color: #fff){
+    background-image: linear-gradient(to $line, $color, rgba(255, 248, 248, 0) 100%, transparent);
+}
+@mixin dividerLeft ($line: right, $color: #fff){
+    background-image: linear-gradient(to $line, transparent, rgba(255, 255, 255, 0) 0%, $color);
+}
+
+@mixin dividerCart($height: 90%, $width: 90%) {
+    content: "";
+    height: $height;
+    width: $width;
+    display: block;
+    position: absolute;
+}
+@mixin subTitle ($size: 35px, $transform: uppercase){
+    font-size: $size;
+    font-family: 'now medium';
+    text-transform: $transform;
+}
+@mixin sectionCenter {
+    max-width: 830px;
+    margin: auto;
+    text-align: center;
+    width: 80%;
+}
+@mixin ornWrapper {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: 20px;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+@mixin ornFlower ($width: 100%, $left: 0, $top: 0){
+    opacity: .6;
+    position: absolute;
+    width: $width;
+    left: $left;
+    top: $top;
+}
+@mixin normalText ($align: justify){
+    margin-top: 10px;
+    color: $greyColor;
+    font-size: 12px;
+    text-align: justify;
+    letter-spacing: 0.02em;
+    line-height: 1.5em;
+}
+@mixin contentFlex {
+    display: flex;
+    gap: 35px;
+}
+@mixin bullet ($right: -12px){
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: $greenAlt;     
+    right: $right;
+    top: 0px;
+    border-radius: 50%;
+}
+// ====================================== RESPONSIVE =========================================== //
+@mixin phone {
+    @media only screen and (max-width: 767px) { @content; }
+}
+@mixin desktop {
+    @media only screen and (min-width: 768px) { @content; }
+}
+// ====================================== ANIMATION =========================================== //
+@-moz-keyframes spin { 
+    100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
+}
