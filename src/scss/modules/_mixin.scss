@@ -99,3 +99,20 @@
         transform:rotate(360deg); 
     } 
 }
+@-moz-keyframes flowerRight { 
+    100% { -moz-transform: rotate(25deg); } 
+}
+@-webkit-keyframes flowerRight { 
+    100% { -webkit-transform: rotate(25deg); } 
+}
+@keyframes flowerRight { 
+    0%   {transform:rotate(0deg);}
+    50%  {transform:rotate(25deg);}
+    100% {transform:rotate(0deg);}
+}
+
+@keyframes flowerLeft { 
+    0%   {transform:rotate(300deg);}
+    50%  {transform:rotate(315deg);}
+    100% {transform:rotate(300deg);}
+}

@@ -4,6 +4,13 @@
 .fixed-body {
     position: fixed;
 }
+.mt-10{
+    margin-top: 10px;
+}
+.sub-addr{
+    font-size: 13px;
+    margin-top: 5px;
+}
 header {
     display: none;
     nav {
@@ -21,25 +28,25 @@ header {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            padding: 13px 25px;
+            padding: 12px 25px;
             align-items: baseline;
     
             li {
                 display: inline-block;
     
                 img {
-                    height: 30px;
+                    height: 24px;
                     width: auto;
                 }
     
                 &._home img {
-                    height: 33px;
+                    height: 27px;
                 }
                 &._calendar img {
-                    height: 35px;
+                    height: 29px;
                 }
                 &._greeting img{
-                    height: 34px;
+                    height: 28px;
                 }
             }
         }
@@ -213,7 +220,15 @@ figure.fullwidth {
         vertical-align: sub;
         display: inline-block;
         margin-right: 5px;
-        background-image: url('../../src/images/icons/copy.svg');
+        background-image: url('../../dist/images/icons/copy.svg');
+    }
+    &.copied {
+        font-size: 0;
+        
+        &::after {
+            content: "Copied";
+            font-size: 12px;
+        }
     }
 }
 .card {
@@ -272,6 +287,7 @@ figure.fullwidth {
             color: #212121;
             text-align: center;
             margin: 25px auto 45px;
+            padding: 0 10px;
 
             p {
                 line-height: 1.5em;
@@ -291,7 +307,7 @@ figure.fullwidth {
 .hero {
     @include section();
 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../../src/images/hero.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("../../dist/images/hero.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -340,11 +356,10 @@ figure.fullwidth {
 }
 .couple {
     @include section();
-    background-image: url("../../src/images/ornaments/pmday_orn-bg.png");
+    background-image: url("../../dist/images/ornaments/pmday_orn-bg.png");
     background-position: right;
     background-repeat: no-repeat;
     background-size: auto;
-  
 
     .content {
         display: grid;
@@ -361,7 +376,7 @@ figure.fullwidth {
             
             h1 {
                 @include titlelatin (25px,#212121);
-                word-spacing: 10px;
+                line-height: 37px;
             }
 
             .divider-wrapper {
@@ -383,6 +398,12 @@ figure.fullwidth {
 
                     img {
                         opacity: .5;
+                        vertical-align: sub;
+                        margin-right: 5px;
+                    }
+                    a {
+                        color: $greyColor;
+                        text-decoration: none;
                     }
                 }
             }
@@ -571,6 +592,8 @@ figure.fullwidth {
             }
             select {
                 height: 100%;
+                -webkit-appearance:none;
+                color: #000;
             }
             button {
                 width: 100%;
@@ -587,6 +610,10 @@ figure.fullwidth {
 
             ul {
                 width: 100%;
+                max-height: 600px;
+                overflow-y: scroll;
+                display: flex;
+                flex-direction: column-reverse;
 
                 li {
                     color: #fff;
@@ -605,6 +632,21 @@ figure.fullwidth {
                     .greetcheck {
                         text-align: right;
                         font-size: 12px;
+                        &::before {
+                            content:"";
+                            background-image: url("../../dist/images/icons/hadir.svg");
+                            width: 10px;
+                            height: 10px;
+                            display: inline-block;
+                            background-size: cover;
+                            margin-right: 5px;
+                        }
+                        &.Maaf::before {
+                            background-image: url("../../dist/images/icons/tidak-hadir.svg");
+                        }
+                        &.Tahu::before {
+                            background-image: url("../../dist/images/icons/belum-tahu.svg");
+                        }
                     }
                     .greettext {
                         margin: 10px 0;
@@ -628,6 +670,7 @@ figure.fullwidth {
             
             picture, img {
                 width: 100%;
+                line-height: 1px;
             }
         }
     }
@@ -666,17 +709,29 @@ footer {
     background: #fff;
     text-align: center;
 
+    .header  {
+        img{
+            width: 60px;
+        }
+        h1 {
+            font-size: clamp(20px, 2.7vh, 25px);
+        }
+    }
+
     .minicard {
-        padding: 50px 0 0;
+        padding: 30px 0 0;
         width: 100%;
 
         .card {
             width: 250px;
+            .card-content {
+                line-height: 1px;
+            }
         }
         .names {
-            margin-top: 75px;
-            font-size: 55px;
-            margin-bottom: 40px;
+            font-size: clamp(30px, 6.5vh, 55px);
+            margin-top: 50px;
+            margin-bottom: 30px;
         }
     }
     .pmd-ornament-flower {
@@ -697,11 +752,13 @@ footer {
     p {
         @include subTitle(20px, capitalize);
         color: #363636;
-        margin: 20px 0;
+        margin: 2vh 0;
+        font-size: clamp(14px, 2.3vh, 20px);
     }
 
     h2 {
         @include subTitle(35px, capitalize);
+        font-size: clamp(18px, 4vh, 35px);
     }
     button {
         padding: 15px 20px;
@@ -724,6 +781,7 @@ footer {
         -webkit-animation:spin 4s linear infinite;
         -moz-animation:spin 4s linear infinite;
         animation:spin 4s linear infinite;
+        width: 100%;
     }
 
     &.paused {
@@ -759,37 +817,44 @@ footer {
         width: 30px;
         height: 30px;
         display: block;
-        background-image: url("../../src/images/icons/close.svg");
+        background-image: url("../../dist/images/icons/close.svg");
         background-size: cover;
     }
     .lg-download::after {
-        background-image: url("../../src/images/icons/download.svg"); 
+        background-image: url("../../dist/images/icons/download.svg"); 
     }
 }
 //  ===================================== MOBILE =========================================== //
 .plan-my-day {
     @include phone {
         #opening {
+            justify-content: center;
+            padding: 10px;
             .header {
                 img {
-                    width: 50px;
+                    width: 35px;
                 }
                 h1 {
-                    font-size: 18px;
+                    font-size: clamp(10px, 1.5vh, 14px);
                 }
             }
             .minicard {
                 width: 80%;
-                padding: 10px;
+                padding: 0;
                 margin-top: 20px;
         
                 .card {
                     max-width: 150px;
+                    width: 60%;
+                    padding: 12px !important;
+                    .card-content {
+                        padding: 10px;
+                    }
                 }
                 .names {
-                    font-size: 30px;
                     margin-top: 40px;
-                    margin-bottom: 25px;
+                    margin-bottom: 0;
+                    font-size: clamp(20px, 3.5vh, 30px);
                 }
             }
             .pmd-ornament-flower {
@@ -806,18 +871,18 @@ footer {
                 }
             }
             .guest {
-                margin-top: 25px;
+                margin-top: 10px;
             }
             p {
-                font-size: 13px;
                 line-height: 1.4;
+                font-size: clamp(9px, 1.5vh, 13px);
             }
         
             h2 {
-                font-size: 25px;
+                font-size: clamp(14px, 2.4vh, 25px);
             }
             button {
-                margin-top: 40px;
+                margin-top: 5vh;
             }
         }
         header {
@@ -865,8 +930,15 @@ footer {
         }
         #control-music {
             bottom: 100px;
-            right: 15px;
+            right: 20px;
             left: unset;
+            width: 45px;
+            height: 45px;
+            &::after {
+                width: 12px;
+                height: 25px;
+                top: 23%;
+            }
         }
         .divider-wrapper {
             margin: 15px auto;
@@ -893,12 +965,12 @@ footer {
             .border-card {
                 &.reverse {
                     &::before {
-                        right: 18px;
-                        bottom: 18px;
+                        right: 12px;
+                        bottom: 12px;
                     }
                     &::after {
-                        right: 23px;
-                        bottom: 18px;
+                        right: 17px;
+                        bottom: 12px;
                     }
         
                 }
@@ -914,7 +986,7 @@ footer {
                     @include subTitle(20px, capitalize);
                 }
                 .details {
-                    padding: 0 5px;
+                    padding: 0 5px 0 10px;
                 }
             }
         
@@ -950,9 +1022,8 @@ footer {
                     max-width: 450px;
                 }
                 .orm-pmd__flower-03 {
-                    @include ornFlower(170px, 10%, 51%);
+                    @include ornFlower(170px, 10%, 55%);
                     transform: rotate(60deg);
-
                 }
                 .orm-pmd__flower-02 {
                     @include ornFlower(75%, 23%, 28%);
@@ -961,10 +1032,14 @@ footer {
         }
         .hero {
             padding-bottom: 100px;
-
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("../../dist/images/hero-mobile.jpg");
+            .brides-name {
+                padding: 0 10px;
+                font-size: clamp(50px, 16vw, 60px);
+            }
             .countdown {
                 width: 90%;
-                margin: 70px auto 0;
+                margin: 140px auto 0;
 
                 .counter {
                     padding: 15px 5px;
@@ -1092,9 +1167,11 @@ footer {
         .greeting .content {
             .form-greeting {
                 padding: 45px 0;
+                gap: 5px;
 
                 .form-group {
                     width: 100%;
+                    margin-bottom: 10px;
                 }
             }
             .greeting-list ul li {
@@ -1118,12 +1195,12 @@ footer {
             }
             .pmd-ornament-flower {
                 .orm-pmd__flower-02 {
-                    top: 280px;
+                    top: 350px;
                     left: -8px;
                 }
                 .orm-pmd__flower-01 {
                     left: 55%;
-                    top: 30px;
+                    top: 10px;
                 }
             }
             .thanks, .names {
@@ -1137,6 +1214,33 @@ footer {
             *{
                 font-size: 12px;
             }
+        }
+        .prefooter  {
+            .border-card.reverse{
+                &::before{
+                    right: 15px;
+                    bottom: 25px;
+                }
+                &::after {
+                    right: 15px;
+                    bottom: 20px;
+                }
+            }
+        }
+    }
+}
+//  ===================================== Desktop =========================================== //
+.plan-my-day {
+    @include desktop {
+        .card {
+            &.left {
+                padding-bottom: 30px;
+            }
+
+            &.address {
+                padding-bottom: 47px;
+            }
+        
         }
     }
 }

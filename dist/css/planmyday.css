@@ -1,20 +1,20 @@
 @font-face {
   font-family: 'AphroditeSlimText';
-  src: url("../../src/fonts/aphrodite/aphrodite_slim_text.woff2") format("woff2"), url("....//src/fonts/aphrodite/aphrodite_slim_text.woff") format("woff");
+  src: url("../../dist/fonts/aphrodite/aphrodite_slim_text.woff2") format("woff2"), url("..../dist/fonts/aphrodite/aphrodite_slim_text.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'now medium';
-  src: url("../../src/fonts/now/now-medium.woff2") format("woff2"), url("../../src/fonts/now/now-medium.woff") format("woff");
+  src: url("../../dist/fonts/now/now-medium.woff2") format("woff2"), url("../../dist/fonts/now/now-medium.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'now regular';
-  src: url("../../src/fonts/now/now-regular.woff2") format("woff2"), url("../../src/fonts/now/now-regular.woff") format("woff");
+  src: url("../../dist/fonts/now/now-regular.woff2") format("woff2"), url("../../dist/fonts/now/now-regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -29,6 +29,57 @@
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes flowerRight {
+  100% {
+    -webkit-transform: rotate(25deg);
+  }
+}
+
+@keyframes flowerRight {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(25deg);
+            transform: rotate(25deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes flowerLeft {
+  0% {
+    -webkit-transform: rotate(300deg);
+            transform: rotate(300deg);
+  }
+  50% {
+    -webkit-transform: rotate(315deg);
+            transform: rotate(315deg);
+  }
+  100% {
+    -webkit-transform: rotate(300deg);
+            transform: rotate(300deg);
+  }
+}
+
+@keyframes flowerLeft {
+  0% {
+    -webkit-transform: rotate(300deg);
+            transform: rotate(300deg);
+  }
+  50% {
+    -webkit-transform: rotate(315deg);
+            transform: rotate(315deg);
+  }
+  100% {
+    -webkit-transform: rotate(300deg);
+            transform: rotate(300deg);
   }
 }
 
@@ -88,6 +139,7 @@ p {
 
 section {
   padding: 100px 0 70px;
+  overflow: hidden;
 }
 
 input, select, textarea {
@@ -96,6 +148,7 @@ input, select, textarea {
   border: 1px solid #989898;
   width: 100%;
   padding: 0 10px;
+  border-radius: 5px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -105,8 +158,21 @@ input, select, textarea {
   box-sizing: border-box;
 }
 
+textarea {
+  padding: 10px;
+}
+
 .fixed-body {
   position: fixed;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.sub-addr {
+  font-size: 13px;
+  margin-top: 5px;
 }
 
 header {
@@ -136,7 +202,7 @@ header nav ul {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 13px 25px;
+  padding: 12px 25px;
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
@@ -147,20 +213,20 @@ header nav ul li {
 }
 
 header nav ul li img {
-  height: 30px;
+  height: 24px;
   width: auto;
 }
 
 header nav ul li._home img {
-  height: 33px;
+  height: 27px;
 }
 
 header nav ul li._calendar img {
-  height: 35px;
+  height: 29px;
 }
 
 header nav ul li._greeting img {
-  height: 34px;
+  height: 28px;
 }
 
 .flexbin {
@@ -392,7 +458,16 @@ figure.fullwidth iframe {
   vertical-align: sub;
   display: inline-block;
   margin-right: 5px;
-  background-image: url("../../src/images/icons/copy.svg");
+  background-image: url("../../dist/images/icons/copy.svg");
+}
+
+.pmd_copy-btn.copied {
+  font-size: 0;
+}
+
+.pmd_copy-btn.copied::after {
+  content: "Copied";
+  font-size: 12px;
 }
 
 .card {
@@ -481,6 +556,7 @@ figure.fullwidth iframe {
   color: #212121;
   text-align: center;
   margin: 25px auto 45px;
+  padding: 0 10px;
 }
 
 .card .card-content .details p {
@@ -510,8 +586,8 @@ figure.fullwidth iframe {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("../../src/images/hero.png");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../../src/images/hero.png");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.3))), url("../../dist/images/hero.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("../../dist/images/hero.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -580,7 +656,7 @@ figure.fullwidth iframe {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: url("../../src/images/ornaments/pmday_orn-bg.png");
+  background-image: url("../../dist/images/ornaments/pmday_orn-bg.png");
   background-position: right;
   background-repeat: no-repeat;
   background-size: auto;
@@ -615,7 +691,7 @@ figure.fullwidth iframe {
   font-size: 25px;
   color: #212121;
   font-weight: 400;
-  word-spacing: 10px;
+  line-height: 37px;
 }
 
 .couple .content .grid-profile__name .divider-wrapper {
@@ -645,6 +721,13 @@ figure.fullwidth iframe {
 
 .couple .content .grid-profile__name .social-icons li img {
   opacity: .5;
+  vertical-align: sub;
+  margin-right: 5px;
+}
+
+.couple .content .grid-profile__name .social-icons li a {
+  color: #4D4D4D;
+  text-decoration: none;
 }
 
 .couple .content .grid-profile__photo img {
@@ -908,6 +991,8 @@ figure.fullwidth iframe {
 
 .greeting .content .form-greeting select {
   height: 100%;
+  -webkit-appearance: none;
+  color: #000;
 }
 
 .greeting .content .form-greeting button {
@@ -925,6 +1010,15 @@ figure.fullwidth iframe {
 
 .greeting .content .greeting-list ul {
   width: 100%;
+  max-height: 600px;
+  overflow-y: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
 }
 
 .greeting .content .greeting-list ul li {
@@ -947,6 +1041,24 @@ figure.fullwidth iframe {
   font-size: 12px;
 }
 
+.greeting .content .greeting-list ul li .greetcheck::before {
+  content: "";
+  background-image: url("../../dist/images/icons/hadir.svg");
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background-size: cover;
+  margin-right: 5px;
+}
+
+.greeting .content .greeting-list ul li .greetcheck.Maaf::before {
+  background-image: url("../../dist/images/icons/tidak-hadir.svg");
+}
+
+.greeting .content .greeting-list ul li .greetcheck.Tahu::before {
+  background-image: url("../../dist/images/icons/belum-tahu.svg");
+}
+
 .greeting .content .greeting-list ul li .greettext {
   margin: 10px 0;
 }
@@ -967,6 +1079,7 @@ figure.fullwidth iframe {
 
 .minicard .card .card-content picture, .minicard .card .card-content img {
   width: 100%;
+  line-height: 1px;
 }
 
 .minicard .pmd-ornament-flower .orm-pmd__flower-01 {
@@ -1021,8 +1134,16 @@ footer a {
   text-align: center;
 }
 
+.popup-opening .header img {
+  width: 60px;
+}
+
+.popup-opening .header h1 {
+  font-size: clamp(20px, 2.7vh, 25px);
+}
+
 .popup-opening .minicard {
-  padding: 50px 0 0;
+  padding: 30px 0 0;
   width: 100%;
 }
 
@@ -1030,10 +1151,14 @@ footer a {
   width: 250px;
 }
 
+.popup-opening .minicard .card .card-content {
+  line-height: 1px;
+}
+
 .popup-opening .minicard .names {
-  margin-top: 75px;
-  font-size: 55px;
-  margin-bottom: 40px;
+  font-size: clamp(30px, 6.5vh, 55px);
+  margin-top: 50px;
+  margin-bottom: 30px;
 }
 
 .popup-opening .pmd-ornament-flower {
@@ -1059,13 +1184,15 @@ footer a {
   font-family: 'now medium';
   text-transform: capitalize;
   color: #363636;
-  margin: 20px 0;
+  margin: 2vh 0;
+  font-size: clamp(14px, 2.3vh, 20px);
 }
 
 .popup-opening h2 {
   font-size: 35px;
   font-family: 'now medium';
   text-transform: capitalize;
+  font-size: clamp(18px, 4vh, 35px);
 }
 
 .popup-opening button {
@@ -1087,6 +1214,7 @@ footer a {
 #control-music img {
   -webkit-animation: spin 4s linear infinite;
   animation: spin 4s linear infinite;
+  width: 100%;
 }
 
 #control-music.paused img {
@@ -1122,33 +1250,44 @@ footer a {
   width: 30px;
   height: 30px;
   display: block;
-  background-image: url("../../src/images/icons/close.svg");
+  background-image: url("../../dist/images/icons/close.svg");
   background-size: cover;
 }
 
 .plan-my-day .lg-container .lg-download::after {
-  background-image: url("../../src/images/icons/download.svg");
+  background-image: url("../../dist/images/icons/download.svg");
 }
 
 @media only screen and (max-width: 767px) {
+  .plan-my-day #opening {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 10px;
+  }
   .plan-my-day #opening .header img {
-    width: 50px;
+    width: 35px;
   }
   .plan-my-day #opening .header h1 {
-    font-size: 18px;
+    font-size: clamp(10px, 1.5vh, 14px);
   }
   .plan-my-day #opening .minicard {
     width: 80%;
-    padding: 10px;
+    padding: 0;
     margin-top: 20px;
   }
   .plan-my-day #opening .minicard .card {
     max-width: 150px;
+    width: 60%;
+    padding: 12px !important;
+  }
+  .plan-my-day #opening .minicard .card .card-content {
+    padding: 10px;
   }
   .plan-my-day #opening .minicard .names {
-    font-size: 30px;
     margin-top: 40px;
-    margin-bottom: 25px;
+    margin-bottom: 0;
+    font-size: clamp(20px, 3.5vh, 30px);
   }
   .plan-my-day #opening .pmd-ornament-flower {
     max-width: 150px;
@@ -1163,17 +1302,17 @@ footer a {
     left: -70%;
   }
   .plan-my-day #opening .guest {
-    margin-top: 25px;
+    margin-top: 10px;
   }
   .plan-my-day #opening p {
-    font-size: 13px;
     line-height: 1.4;
+    font-size: clamp(9px, 1.5vh, 13px);
   }
   .plan-my-day #opening h2 {
-    font-size: 25px;
+    font-size: clamp(14px, 2.4vh, 25px);
   }
   .plan-my-day #opening button {
-    margin-top: 40px;
+    margin-top: 5vh;
   }
   .plan-my-day header {
     display: block;
@@ -1226,8 +1365,15 @@ footer a {
   }
   .plan-my-day #control-music {
     bottom: 100px;
-    right: 15px;
+    right: 20px;
     left: unset;
+    width: 45px;
+    height: 45px;
+  }
+  .plan-my-day #control-music::after {
+    width: 12px;
+    height: 25px;
+    top: 23%;
   }
   .plan-my-day .divider-wrapper {
     margin: 15px auto;
@@ -1251,12 +1397,12 @@ footer a {
     padding: 18px 18px 65px;
   }
   .plan-my-day .card .border-card.reverse::before {
-    right: 18px;
-    bottom: 18px;
+    right: 12px;
+    bottom: 12px;
   }
   .plan-my-day .card .border-card.reverse::after {
-    right: 23px;
-    bottom: 18px;
+    right: 17px;
+    bottom: 12px;
   }
   .plan-my-day .card .card-content h1 {
     font-family: 'AphroditeSlimText';
@@ -1271,7 +1417,7 @@ footer a {
     text-transform: capitalize;
   }
   .plan-my-day .card .card-content .details {
-    padding: 0 5px;
+    padding: 0 5px 0 10px;
   }
   .plan-my-day ._single {
     padding: 85px 0;
@@ -1320,7 +1466,7 @@ footer a {
     position: absolute;
     width: 170px;
     left: 10%;
-    top: 51%;
+    top: 55%;
     -webkit-transform: rotate(60deg);
             transform: rotate(60deg);
   }
@@ -1333,10 +1479,16 @@ footer a {
   }
   .plan-my-day .hero {
     padding-bottom: 100px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.3))), url("../../dist/images/hero-mobile.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("../../dist/images/hero-mobile.jpg");
+  }
+  .plan-my-day .hero .brides-name {
+    padding: 0 10px;
+    font-size: clamp(50px, 16vw, 60px);
   }
   .plan-my-day .hero .countdown {
     width: 90%;
-    margin: 70px auto 0;
+    margin: 140px auto 0;
   }
   .plan-my-day .hero .countdown .counter {
     padding: 15px 5px;
@@ -1457,9 +1609,11 @@ footer a {
   }
   .plan-my-day .greeting .content .form-greeting {
     padding: 45px 0;
+    gap: 5px;
   }
   .plan-my-day .greeting .content .form-greeting .form-group {
     width: 100%;
+    margin-bottom: 10px;
   }
   .plan-my-day .greeting .content .greeting-list ul li {
     margin-bottom: 5px;
@@ -1478,12 +1632,12 @@ footer a {
     max-width: 250px;
   }
   .plan-my-day .minicard .pmd-ornament-flower .orm-pmd__flower-02 {
-    top: 280px;
+    top: 350px;
     left: -8px;
   }
   .plan-my-day .minicard .pmd-ornament-flower .orm-pmd__flower-01 {
     left: 55%;
-    top: 30px;
+    top: 10px;
   }
   .plan-my-day .minicard .thanks, .plan-my-day .minicard .names {
     font-size: 55px;
@@ -1494,6 +1648,23 @@ footer a {
   }
   .plan-my-day footer * {
     font-size: 12px;
+  }
+  .plan-my-day .prefooter .border-card.reverse::before {
+    right: 15px;
+    bottom: 25px;
+  }
+  .plan-my-day .prefooter .border-card.reverse::after {
+    right: 15px;
+    bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .plan-my-day .card.left {
+    padding-bottom: 30px;
+  }
+  .plan-my-day .card.address {
+    padding-bottom: 47px;
   }
 }
 /*# sourceMappingURL=planmyday.css.map */
