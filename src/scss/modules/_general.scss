@@ -25,7 +25,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
-    font-family: 'now regular';
+    font-family: 'Bludhaven';
+    background-color: $bgColor;
 }
 ol, ul {
 	list-style: none;
@@ -46,7 +47,7 @@ p {
     font-size: 15px;
 }
 section {
-    padding: 100px 0 70px;
+    padding: 0 0 50px 0;
     overflow: hidden;
 }
 input, select, textarea {
@@ -55,7 +56,6 @@ input, select, textarea {
     border: 1px solid #989898;
     width: 100%;
     padding: 0 10px;
-    border-radius: 5px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
          box-sizing: border-box;
@@ -68,4 +68,7 @@ input, select, textarea {
 }
 textarea {
     padding: 10px;
+}
+.plan-my-day b {
+    font-family: 'BodoniXT';
 }

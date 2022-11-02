@@ -1,25 +1,27 @@
 // ================================= Fonts ================================= //
 @font-face {
-    font-family: 'AphroditeSlimText';
-    src: url('../../dist/fonts/aphrodite/aphrodite_slim_text.woff2') format('woff2'),
-         url('..../dist/fonts/aphrodite/aphrodite_slim_text.woff') format('woff');
+    font-family: 'Arial';
+    src: url('../../dist/fonts/Arial/arial.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 
 }
 @font-face {
-    font-family: 'now medium';
-    src: url('../../dist/fonts/now/now-medium.woff2') format('woff2'),
-         url('../../dist/fonts/now/now-medium.woff') format('woff');
+    font-family: 'Bludhaven';
+    src: url('../../dist/fonts/Bludhaven/BLUDHAVEN.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 
 }
 @font-face {
-    font-family: 'now regular';
-    src: url('../../dist/fonts/now/now-regular.woff2') format('woff2'),
-         url('../../dist/fonts/now/now-regular.woff') format('woff');
-    font-weight: normal;
+    font-family: 'BodoniXT';
+    src: url('../../dist/fonts/BodoniXT/BodoniXT.woff2') format('woff2');
+    font-weight: bold;
     font-style: normal;
-
+}
+@font-face {
+    font-family: 'RobotoSerif';
+    src: url('../../dist/fonts/RobotoSerif/RobotoSerif-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
 }

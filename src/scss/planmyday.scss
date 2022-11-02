@@ -1,1246 +1,887 @@
-@import 'modules/fonts', 'modules/variable', 'modules/mixin', 'modules/general';
+@import "modules/fonts", "modules/variable", "modules/mixin", "modules/general";
 
 //  ===================================== PLAN MY DAY =========================================== //
-.fixed-body {
-    position: fixed;
+// .fixed-body {
+//     position: fixed;
+// }
+.mt-10 {
+  margin-top: 10px;
 }
-.mt-10{
-    margin-top: 10px;
+.sub-addr {
+  font-size: 13px;
+  margin-top: 5px;
 }
-.sub-addr{
-    font-size: 13px;
-    margin-top: 5px;
-}
-header {
-    display: none;
-    nav {
-        position: fixed;
-        z-index: 9;
-        background: $mainColor;
-        width: 90%;
-        left: 0;
-        right: 0;
-        margin: auto;
-        bottom: 20px;
-        border-radius: 10px;
-    
-        ul {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            padding: 12px 25px;
-            align-items: baseline;
-    
-            li {
-                display: inline-block;
-    
-                img {
-                    height: 24px;
-                    width: auto;
-                }
-    
-                &._home img {
-                    height: 27px;
-                }
-                &._calendar img {
-                    height: 29px;
-                }
-                &._greeting img{
-                    height: 28px;
-                }
-            }
-        }
-    }
-}
-.flexbin {
-    display: flex;
-    overflow: hidden;
-    flex-wrap: wrap;
-    margin: -2.5px;
-
-    &::after {
-        content: '';
-        flex-grow: 999999999;
-        min-width: 300px;
-        height: 0
-    }
-
-    & > * {
-        position: relative;
-        display: block;
-        height: 300px;
-        margin: 2.5px;
-        flex-grow: 1;
-
-        & > img{
-            height: 300px;
-            object-fit: cover;
-            max-width: 100%;
-            min-width: 100%;
-            vertical-align: bottom;
-        }
-    }
-
-    &.flexbin-margin {
-        margin: 2.5px;
-    }
-}
-.pmday-button {
-    background-color: $secondColor;
-    border-radius: 4px;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 12px;
-    text-transform: uppercase;
-    margin: auto;
-    display: block;
-    border: 0;
-    color: #fff;
-
-
-    figure {
-        display: flex;
-        color: #fff;
-       align-items: center;
-       gap: 10px;
-       justify-content: center;
-
-    }
-}
-figure.fullwidth {
-    text-align: center;
-    width: 80%;
-    max-width: 1440px;
-    margin: auto;
-    margin-top: 100px;
-    border: 2px solid $greyColor;
-    padding: 15px;
-
-    iframe {
-        width: 100%;
-    }
-}
-._single {
-    position: relative;
-    
-    .pmd-ornament-flower {
-        @include ornWrapper();
-        
-        .orm-pmd__flower-01 {
-            @include ornFlower(50%, 40%, 22px);
-            max-width: 530px;
-        }
-
-        .orm-pmd__flower-02 {
-            @include ornFlower(350px, 20%, 400px);
-        }
-    }
-}
-._twin {
-    .pmd-ornament-flower {
-        @include ornWrapper();
-        margin-top: 50px;
-
-        .orm-pmd__flower-01 {
-            @include ornFlower(331px, 8%, 60%);
-        }
-        .orm-pmd__flower-03 {
-            @include ornFlower(170px, 76%, 40%);
-        }
-        .orm-pmd__flower-02 {
-            @include ornFlower(70%, 0, 100px);
-            position: relative;
-        }
-    }
-}
-.divider-wrapper {
-    display: table; 
-    font-size: 15px;  
-    width: 60%;
-    margin: 20px auto;
-    
-    & > * {
-        display: table-cell; position: relative;
-    }		
-    
-    p {
-        color: #fff; 
-        padding: 0px 10px;
-        width: auto; 
-        white-space: nowrap;
-    }
-    .divider {
-        width: 50%;
-        top: 8px;
-        -moz-background-size: 100% 3px;
-        background-size: 100% 3px;
-        background-position: 0 0, 0 100%;
-        background-repeat: no-repeat;
-
-        &.left {
-            @include dividerLeft(left, #86955466);
-        }
-
-        &.right {
-            @include dividerRight(left, #86955466);
-        }
-    }
-    &.white {
-        width: 75%;
-        margin: 40px auto;
-
-        .divider {
-            &.left {
-                @include dividerLeft();
-            }
-    
-            &.right {
-                @include dividerRight();
-            }
-        }
-
-        img {
-            filter: brightness(0) invert(1);
-        }
-    } 
-
-}
-.pmd_copy-btn {
-    background: none;
-    cursor: copy;
-    border: none;
-    font-size: 12px;
-    color: #212121;
-    margin: 20px auto;
-    
-    &::before {
-        content: "";
-        width: 14px;
-        height: 14px;
-        vertical-align: sub;
-        display: inline-block;
-        margin-right: 5px;
-        background-image: url('../../dist/images/icons/copy.svg');
-    }
-    &.copied {
-        font-size: 0;
-        
-        &::after {
-            content: "Copied";
-            font-size: 12px;
-        }
-    }
+.sub-header {
+  text-align: center;
+  .title {
+    @include titleTextCommon();
+  }
 }
 .card {
-    width: 90%;
-    max-width: 450px;
-    margin: auto;
-    background-color: #fff;
-    padding: 25px 25px 75px;
-    position: relative;
-    z-index: 1;
-    box-shadow: 5px 10px 35px 5px rgba(0, 0, 0, 0.1);
+  .title {
+    @include titleTextCommon();
+    margin-bottom: 0;
+  }
+  .divider-wrapper {
+    margin-bottom: 18px;
+  }
+  .details p {
+    @include generalFont(16px);
 
-    .border-card {
+    b {
+      font-family: "BodoniXT";
+      font-size: 16px;
+    }
+    &.mt-10 {
+      text-transform: unset;
+    }
+    &.addres {
+      max-width: 180px;
+      margin: 20px auto 0;
+      text-align: left;
+      position: relative;
+      font-size: 14px;
+      line-height: 18px;
+
+      &::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        display: block;
+        position: absolute;
+        left: -25px;
+        background-image: url("../../dist/images/icons/pin.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: auto;
+      }
+      &._additional {
+        margin-top: 12px;
+
         &::before {
-            @include dividerLeft(top, $secondColor);
-            @include dividerCart(80%, 5px);
-            opacity: .5;
+          display: none;
         }
+      }
+    }
+  }
+  &.right {
+    margin-top: 97px;
+    .details p {
+      &.addres {
+        max-width: 190px;
+      }
+    }
+  }
+  &.boyongan {
+    margin-top: 45px;
+
+    .date-flex {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 22px;
+      gap: 10px;
+
+      .flex-left {
+        position: relative;
         &::after {
-            @include dividerRight(right, $secondColor);
-            @include dividerCart(5px, 80%);
-            opacity: .5;
-            margin-left: 5px;
+          content: "";
+          width: 10px;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          background-image: url("../../dist/images/icons/spliter.svg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          right: -10px;
         }
-        &.reverse {
-            &::before {
-                @include dividerLeft(bottom, $secondColor);
-                right: 25px;
-                bottom: 25px;
-            }
-            &::after {
-                @include dividerRight(left, $secondColor);
-                right: 30px;
-                bottom: 25px;
-            }
+      }
 
-        }
+      p:nth-child(2) {
+        font-size: 14px;
+        margin: 5px 0 10px;
+      }
+      p:nth-child(1) {
+        margin-top: 15px;
+      }
+      p:nth-child(3) {
+        margin-bottom: 15px;
+      }
     }
+  }
+}
+header {
+  display: block;
+  nav {
+    position: fixed;
+    z-index: 9;
+    background: $brownColor;
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    max-width: 450px;
 
-    .card-content {
-        @include section();
-        width: 100%;
-        flex-direction: column;
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 12px 25px;
+      align-items: baseline;
 
-        h1 {
-            @include titlelatin(30px, $greyColor);
-            margin-top: 50px;
+      li {
+        display: inline-block;
+
+        img {
+          height: 24px;
+          width: auto;
         }
 
-        h2 {
-            @include subTitle(22px, capitalize);
-            margin: 20px auto;
+        &._home img {
+          height: 27px;
         }
-
-        .details {
-            color: #212121;
-            text-align: center;
-            margin: 25px auto 45px;
-            padding: 0 10px;
-
-            p {
-                line-height: 1.5em;
-            }
+        &._calendar img {
+          height: 29px;
         }
+        &._greeting img {
+          height: 28px;
+        }
+      }
     }
+  }
+}
+.pmday-button {
+  @include generalFont(14px, uppercase);
+  background-color: $brownColor;
+  border-radius: 4px;
+  padding: 2px;
+  text-decoration: none;
+  margin: auto;
+  display: block;
+  border: 0;
+  color: #fff;
+  text-align: center;
+  font-size: clamp(13px, 4vw, 14px);
 
+  span {
+    padding: 11px 20px;
+    display: block;
+    border: 1px dashed #fff;
+  }
+}
+figure.fullwidth {
+  text-align: center;
+  width: 80%;
+  max-width: 1440px;
+  margin: auto;
+  margin-top: 80px;
+  border: 2px solid $greyColor;
+  padding: 15px;
+
+  iframe {
+    width: 100%;
+  }
+}
+.pmd_copy-btn {
+  background: none;
+  cursor: copy;
+  border: none;
+  font-size: 12px;
+  color: #212121;
+  margin: 20px auto;
+
+  &::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    vertical-align: sub;
+    display: inline-block;
+    margin-right: 5px;
+    background-image: url("../../dist/images/icons/copy.svg");
+  }
+  &.copied {
+    font-size: 0;
+
+    &::after {
+      content: "Copied";
+      font-size: 12px;
+    }
+  }
 }
 .sub-title {
-    font-weight: 400;
-    font-size: 12px;
-    max-width: 600px;
-    margin: 40px auto 75px;
-    color: #363636;
-    line-height: 1.2;
+  @include generalFont(14px, capitalize);
+  line-height: 18px;
+  max-width: 320px;
+  margin: 0 auto 10px;
 }
 .hero {
-    @include section();
+  @include section();
 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("../../dist/images/hero.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url("../../dist/images/hero.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  position: relative;
+  padding: 230px 0 160px;
+  color: #fff;
+  min-height: 600px;
+
+  * {
+    text-align: center;
+  }
+  .title {
+    @include generalFont(60px, capitalize);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.8);
+    display: block;
+    line-height: 1.5;
     position: relative;
-    padding: 150px 0;
-    color: #fff;
 
-    * {
+    svg {
+      display: block;
+
+      &.and {
+        position: absolute;
+        right: 35px;
+      }
+    }
+  }
+  p {
+    @include generalFont(16px, capitalize);
+  }
+  .date-description {
+    margin: 10px 0 25px;
+  }
+}
+.countdown {
+  @include section();
+  padding-top: 30px;
+  background-image: url("../../dist/images/ornaments/decor_flower_01.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+
+  .content {
+    width: 85%;
+    position: relative;
+    padding-top: 30px;
+    max-width: 400px;
+
+    .countdown-wrapper {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 33px;
+
+      li {
+        display: inline-block;
+        border-radius: 20px;
+        background-image: url("../../dist/images/ornaments/shape-countdown.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
         text-align: center;
-    }
-    .title {
-        @include titlelatin(60px, #FFF);
+        background-repeat: no-repeat;
+        min-height: 73px;
+        position: relative;
+        width: 31%;
 
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.8);
-        display: block;
-        margin-bottom: 30px;
-        line-height: 1.5;
-    }
-    .countdown {
-        li {
-            display: inline-block;
-            margin: 0 10px;
-            background: $mainColor;
-            padding: 25px 30px 30px;
-            border-radius: 20px;
-
-            .time {
-                @include titlelatin(60px, #fff);
-            }
-            .desc {
-                text-transform: uppercase;
-                font-size: 12px;
-                margin-top: 4px;
-            }
+        .time {
+          @include titlelatin(40px);
+          line-height: 50px;
         }
+        .desc {
+          text-transform: capitalize;
+          font-size: 12.5px;
+          position: absolute;
+          bottom: 2px;
+          left: 0;
+          right: 0;
+        }
+      }
     }
 
+    .pmday-button {
+      width: 75%;
+    }
+
+    .pmd-ornament-flower {
+      display: none;
+      position: absolute;
+      top: -5px;
+      z-index: -1;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
 .center-column {
-    & > .header,
-    & > .content {
-        @include sectionCenter();
-        z-index: 1;
-        position: relative;
-    }
+  & > .header,
+  & > .content {
+    @include sectionCenter();
+    z-index: 1;
+    position: relative;
+  }
 }
 .couple {
-    @include section();
-    background-image: url("../../dist/images/ornaments/pmday_orn-bg.png");
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: auto;
-
-    .content {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        padding: 10px;  
-        
-        .grid-profile__name {
-            background: #89A58F33;
-            text-align: left;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            
-            h1 {
-                @include titlelatin (25px,#212121);
-                line-height: 37px;
-            }
-
-            .divider-wrapper {
-                margin-left: 0;
-                .divider {
-                    height: 15px;
-                }
-            }
-
-            p {
-                @include normalText();
-            }
-
-            .social-icons {
-                margin-top: 30px;
-
-                li {
-                    display: inline-block;
-
-                    img {
-                        opacity: .5;
-                        vertical-align: sub;
-                        margin-right: 5px;
-                    }
-                    a {
-                        color: $greyColor;
-                        text-decoration: none;
-                    }
-                }
-            }
-        }
-        .grid-profile__photo {
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
+  @include section();
+  background-image: url("../../dist/images/ornaments/pmd-bg_texture.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  padding-bottom: 20px;
+  .sub-header {
+    p {
+      font-family: "RobotoSerif";
+      font-weight: 400;
+      font-size: 12px;
+      margin: 10px auto;
+      color: $mainColor;
+      line-height: 1.5;
+      max-width: 192px;
     }
+  }
+
+  .content {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 100%;
+    max-width: 400px;
+
+    .grid-profile__name {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 30px 10px;
+
+      h1,
+      p {
+        @include generalFont(16px, capitalize);
+        line-height: 18px;
+      }
+      p {
+        font-size: 14px;
+      }
+      .desc-address {
+        margin: 5px 0 10px;
+      }
+    }
+    .grid-profile__photo {
+      &.bride {
+        grid-row: 1 / 2;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
 }
 .date-maps {
-    position: relative;
+  position: relative;
 
-    .content {
-        @include contentFlex();
+  .content {
+    @include contentFlex();
+    background-image: url("../../dist/images/ornaments/bg-date.svg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: auto;
+    flex-direction: column;
+    padding-top: 120px;
+    padding-bottom: 17px;
+    gap: 0;
+  }
+  .pmday-button {
+    margin-top: 20px;
+    max-width: 50%;
+  }
+  .maps {
+    border: 0;
+    padding: 0;
+    iframe {
+      width: 242px;
+      height: 140px;
+      margin-right: -5px;
     }
-    .pmday-button{
-        margin-top: 30px;
-        max-width: 50%;
+    &.bottom {
+      margin-top: 64px;
     }
+  }
 }
-.story {
-    .content {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        background-color: #fff;
-        box-shadow: 5px 10px 35px 5px rgba(0, 0, 0, 0.1);
-        padding: 90px 0;
 
-        .story-content  {
-            text-align: right;
-            padding: 0px 35px 50px 60px;
-
-            &._right {
-                text-align: left;
-                padding: 0px 60px 50px 35px;
-            }
-        }
-
-        .story__photo {
-            @include section();
-            
-            &:not(.first)::before {
-                @include dividerRight(right, $greenAlt);
-                @include dividerCart(4px, 45%);
-                top: 10px;
-                left: 35px;
-            }
-
-            &.second::before {
-                @include dividerRight(left, $greenAlt);
-                @include dividerCart(4px, 45%);
-                right: 35px;
-                left: unset;            
-            }
-        }
-        & > div {
-            position: relative;
-            
-            &:nth-child(odd){
-                border-right: 2px solid $greenAlt;
-    
-                &::after {
-                    @include bullet();
-                }
-            }
-        }
-        h1 {
-            @include titlelatin(18px , $greenAlt);
-            margin-bottom: 10px;
-        }
-        h2 {
-            font-size: 22px;
-            color: $greyColor;
-            margin-bottom: 15px;
-        }
-        p {
-            @include normalText();
-        }
-    }
-}
 .gallery {
-    .content {
-        max-width: 1440px;
-        width: 100%;
-    }
-    .teaser-divider {
-        margin-top: 100px;
-
-        p {
-            font-size: 20px;
-            color: #000;
-        }
-    }
-    .teaser {
-        margin-top: 50px;
-    }
-}
-.gift {
+  .content {
     position: relative;
-
-    .content {
-        @include contentFlex();
-
-        .icon-title {
-            margin-top: 30px;
-        }
-
-        .details {
-            padding: 15px;
-            margin: 0;
-
-            p {
-                @include subTitle(18px, capitalize);
-
-                &.nametag {
-                    margin: 20px auto;
-                }
-            }
-        }
+    text-align: center;
+    .pmd-ornament-flower {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: -1;
     }
+  }
+  .gallery-slider {
+    &:not(.slick-slider) {
+      & > picture {
+        display: none;
+
+        &::first-child {
+          display: block;
+        }
+      }
+    }
+    .slick-slide img {
+      margin: auto;
+    }
+
+    .slick-dots {
+      li,
+      button {
+        width: 10px;
+        height: 10px;
+      }
+      li {
+        &.slick-active {
+          top: -1px;
+
+          button:before {
+            width: 10px;
+            height: 10px;
+          }
+        }
+        button:before {
+          font-family: inherit;
+          background: $secondColor;
+          content: "";
+          border-radius: 50%;
+          height: 8px;
+          width: 8px;
+        }
+      }
+    }
+  }
 }
 .protocols {
-    .content {
-        display: grid;
-        grid-template-columns: 30% 30% 30%;
-        justify-content: center;
-        row-gap: 30px;
-        background-color: #fff;
-        box-shadow: 5px 10px 35px 5px rgba(0, 0, 0, 0.1);
-        padding: 55px 0;
+  background-image: url("../../dist/images/ornaments/bg-prokes.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 360px;
+  padding-bottom: 100px;
+  padding-top: 50px;
 
-        figure {
-            height: 100%;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 0 15px;
+  .sub-title {
+    margin: 20px auto 90px;
+  }
 
-            &:first-child figcaption {
-                margin-top: 15px;
-            }
-        }
+  .content {
+    display: grid;
+    justify-content: center;
+    row-gap: 5px;
+    grid-template-columns: 50% 50%;
+    width: 310px;
+    margin: auto;
+
+    figure {
+      height: 100%;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+
+      &:first-child figcaption {
+        margin-top: 7px;
+      }
+
+      img {
+        width: 100%;
+        max-width: 80px;
+      }
+
+      figcaption {
+        margin-top: 7px;
+        @include generalFont(14px, capitalize);
+        line-height: 18px;
+        text-align: center;
+      }
     }
+  }
 }
 .ar-rum {
-    background: $greenAlt;
-
-    h1 {
-        font-weight: 100;
-        font-size: 20px;
-        margin-bottom: 35px;
-        line-height: 1.5;
-    }
-    .sub-title {
-        line-height: 18px;
-        margin-bottom: 35px;
-    }
+  margin: 0;
+  padding: 0;
+  h1 {
+    font-weight: 400;
+    font-size: 15px;
+    margin-bottom: 15px;
+    line-height: 18px;
+    font-family: "Arial";
+    color: $mainColor;
+  }
+  .sub-title {
+    font-weight: 500;
+    line-height: 18px;
+    @include generalFont(14px);
+  }
 }
 .greeting {
-    .content {
-        background-color: #fff;
-        box-shadow: 5px 10px 35px 5px rgba(0, 0, 0, 0.1);
+  background-image: url("../../dist/images/ornaments/bg-greeting.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 360px;
 
-        .form-greeting {
-            width: 85%;
-            margin: auto;
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-            gap: 30px;
-            padding: 70px 0;
+  .title {
+    margin-top: 30px;
+    max-width: 250px;
+    margin-bottom: 40px;
+  }
+  .content {
+    .form-greeting {
+      width: 85%;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 5px;
+      background: none;
+      max-width: 280px;
+      padding: 50px 0 60px;
 
-            .form-group {
-                width: 50%;
-                width: calc(50% - (30px / 2));
+      .alert {
+        font-weight: 400;
+        font-size: 12px;
+        color: #d20000;
+      }
+      .form-group {
+        width: 50%;
+        width: calc(50% - (30px / 2));
+        width: 100%;
+        margin-bottom: 10px;
 
-
-                &.prayer-wrapper {
-                    width: 100%;
-                }
-            }
-            select {
-                height: 100%;
-                -webkit-appearance:none;
-                color: #000;
-            }
-            button {
-                width: 100%;
-                border: 0;
-                color: #fff;
-                height: 42px;
-            }
+        &.prayer-wrapper {
+          width: 100%;
         }
-
-        .greeting-list {
-            width: 85%;
-            margin: auto;
-            padding: 10px 0 90px;
-
-            ul {
-                width: 100%;
-                max-height: 600px;
-                overflow-y: scroll;
-                display: flex;
-                flex-direction: column-reverse;
-
-                li {
-                    color: #fff;
-                    padding: 15px;
-                    border-radius: 10px;
-                    text-align: left;
-                    background: $greenAlt;
-                    margin-bottom: 1px;
-
-
-                    h2 {
-                        margin-bottom: 5px;
-                        font-size: 22px;
-                        text-transform: capitalize;
-                    }
-                    .greetcheck {
-                        text-align: right;
-                        font-size: 12px;
-                        &::before {
-                            content:"";
-                            background-image: url("../../dist/images/icons/hadir.svg");
-                            width: 10px;
-                            height: 10px;
-                            display: inline-block;
-                            background-size: cover;
-                            margin-right: 5px;
-                        }
-                        &.Maaf::before {
-                            background-image: url("../../dist/images/icons/tidak-hadir.svg");
-                        }
-                        &.Tahu::before {
-                            background-image: url("../../dist/images/icons/belum-tahu.svg");
-                        }
-                    }
-                    .greettext {
-                        margin: 10px 0;
-                    }
-                }
-            }
-        }
+      }
+      select {
+        height: 100%;
+        -webkit-appearance: none;
+        color: #000;
+      }
+      button {
+        width: 100%;
+        border: 0;
+        color: #fff;
+        height: 42px;
+      }
     }
+  }
 }
-.minicard {
-    * {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-             box-sizing: border-box;
-    }
-    .card {
-        padding-bottom: 23px !important;
-        width: 350px;
-        .card-content {
-            padding: 20px;
-            
-            picture, img {
-                width: 100%;
-                line-height: 1px;
-            }
+.greeting-list {
+  .greeting-wrapper {
+    background-color: #fff;
+    box-shadow: 5px 10px 35px 5px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px 0;
+    max-width: 400px;
+
+    ul {
+      width: 85%;
+      margin: auto;
+      max-height: 600px;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column-reverse;
+
+      li {
+        color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: left;
+        background: $secondColor;
+        margin-bottom: 1px;
+        margin-bottom: 5px;
+
+        h2 {
+          margin-bottom: 5px;
+          @include generalFont($size: 16px);
+          color: #fff;
         }
-    }
-    .pmd-ornament-flower {
-        .orm-pmd__flower-01 {
-            width: 34%;
+        .greetcheck {
+          text-align: right;
+          font-size: 12px;
+          font-size: 10px;
+          text-align: left;
+          padding: 5px 0;
+          border-bottom: 1px solid #fff;
+
+          &::before {
+            content: "";
+            background-image: url("../../dist/images/icons/hadir.svg");
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            background-size: cover;
+            margin-right: 5px;
+          }
+          &.Belum::before {
+            background-image: url("../../dist/images/icons/tidak-hadir.svg");
+          }
         }
-        .orm-pmd__flower-02 {
-            top: 200px;
+        .greettext {
+          margin: 10px 0;
+          @include generalFont($size: 14px);
+          color: #fff;
         }
+      }
     }
-    .thanks, .names {
-        @include titlelatin(80px, $greyColor);
-        text-align: center;
-        margin: 130px auto 50px;
+  }
+}
+.prefooter {
+  background-image: url("../../dist/images/ornaments/bg-prefooter.svg");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: auto;
+  text-align: center;
+  padding: 0;
+  position: relative;
+
+  * {
+    @include generalFont($size: 14px);
+    line-height: 18px;
+  }
+  .title {
+    text-transform: capitalize !important;
+    font-size: 14px !important;
+  }
+  .sub-title {
+    font-family: "RobotoSerif";
+    font-size: 12px;
+    max-width: 200px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+  .content {
+    margin-bottom: 20px;
+    .content-title {
+      margin-bottom: 45px;
     }
+    .keluarga-wrapper {
+      display: flex;
+      max-width: 360px;
+      margin: auto;
+      gap: 15px;
+      width: 80%;
+    }
+  }
+  .pmd-ornament-flower {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
 }
 footer {
-    padding: 30px 15px;
-    text-align: center;
-    background-color: $greenAlt;
-    color: #fff;
+  padding: 30px 15px 100px;
+  text-align: center;
+  background-color: $mainColor;
+  color: #fff;
 
-    a {
-        margin-top: 10px;
-        display: block;
-        text-decoration: none;
-    }
+  a {
+    margin-top: 10px;
+    display: block;
+    text-decoration: none;
+  }
+
+  * {
+    font-size: 12px;
+  }
 }
 .popup-opening {
-    @include section();
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 99;
-    background: #fff;
-    text-align: center;
+  @include section();
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 99;
+  background: #fff;
+  text-align: center;
+  padding: 10px;
+  background-image: url("../../dist/images/galleries/popup-image.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 360px;
 
-    .header  {
-        img{
-            width: 60px;
-        }
-        h1 {
-            font-size: clamp(20px, 2.7vh, 25px);
-        }
+  .subheader {
+    margin-bottom: 20px;
+    margin-top: 3vh;
+
+    img {
+      width: 60px;
     }
-
-    .minicard {
-        padding: 30px 0 0;
-        width: 100%;
-
-        .card {
-            width: 250px;
-            .card-content {
-                line-height: 1px;
-            }
-        }
-        .names {
-            font-size: clamp(30px, 6.5vh, 55px);
-            margin-top: 50px;
-            margin-bottom: 30px;
-        }
+    .sasha {
+      width: 73px;
+      height: 45px;
     }
-    .pmd-ornament-flower {
-        width: 250px;
-
-        .orm-pmd__flower-01 {
-            width: 100%;
-        }
-        .orm-pmd__flower-02 {
-            width: 80%;
-            top: 150px;
-            left: -55%;
-        }
+    .and {
+      position: absolute;
+      width: 11px;
+      top: 35px;
+      right: 20px;
     }
-    h1 {
-        font-size: 25px;
+    .pandu {
+      width: 82px;
+      height: 50px;
+      margin-top: -5px;
     }
     p {
-        @include subTitle(20px, capitalize);
-        color: #363636;
-        margin: 2vh 0;
-        font-size: clamp(14px, 2.3vh, 20px);
+      margin: 0;
+      line-height: 16px;
+      b {
+        color: $mainColor;
+        font-size: 16px;
+      }
     }
+    .title {
+      position: relative;
+      max-width: 85px;
+      text-align: center;
+    }
+  }
+  .popup-footer {
+    text-align: center;
+    margin-top: 10px;
+    .divider-img {
+      margin: auto;
+      display: block;
+    }
+    .logo {
+      filter: invert(1);
+    }
+  }
+  .minicard {
+    width: 186px;
+    height: 261px;
+    display: block;
+    margin: 10px auto;
+  }
+  h1 {
+    font-size: 25px;
+  }
+  p {
+    @include generalFont(20px, capitalize);
+    line-height: 18px;
+    margin: 5px;
+    font-size: 14px;
+    max-width: 300px;
+  }
 
-    h2 {
-        @include subTitle(35px, capitalize);
-        font-size: clamp(18px, 4vh, 35px);
+  h2 {
+    font-family: "BodoniXT";
+    color: $mainColor;
+    line-height: 18px;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 1.2vh 0;
+    text-transform: capitalize;
+  }
+  button {
+    margin-top: 3vh;
+    cursor: pointer;
+
+    span {
+      padding: 11px 40px;
     }
-    button {
-        padding: 15px 20px;
-        margin-top: 30px;
-        cursor: pointer;
-    }
+  }
 }
 
 #control-music {
-    position: fixed;
-    z-index: 9;
-    width: 50px;
-    height: 50px;
-    left: 15px;
-    bottom: 15px;
-    cursor: pointer;
+  position: fixed;
+  z-index: 9;
+  width: 50px;
+  height: 50px;
+  left: 15px;
+  bottom: 15px;
+  cursor: pointer;
 
+  img {
+    -webkit-animation: spin 4s linear infinite;
+    -moz-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
+    width: 100%;
+  }
 
+  &.paused {
     img {
-        -webkit-animation:spin 4s linear infinite;
-        -moz-animation:spin 4s linear infinite;
-        animation:spin 4s linear infinite;
-        width: 100%;
+      animation: none;
+      position: relative;
+      opacity: 0.7;
     }
 
-    &.paused {
-        img {
-            animation: none;
-            position: relative;
-            opacity: 0.7;
-        }
-
-        &:after {
-            border-left: 5px solid #fff;
-            border-right: 5px solid #fff;
-            content: "";
-            display: block;
-            position: absolute;
-            width: 15px;
-            height: 30px;
-            top: 20%;
-            left: 25%;
-        }
+    &:after {
+      border-left: 5px solid #fff;
+      border-right: 5px solid #fff;
+      content: "";
+      display: block;
+      position: absolute;
+      width: 15px;
+      height: 30px;
+      top: 20%;
+      left: 25%;
     }
+  }
 }
-.plan-my-day .lg-container  {
-    .lg-prev::after {
-        content: "<";
-    }
-    .lg-next::before{
-        content: ">";
-    }
-    .lg-close:after,
-    .lg-download::after {
-        content: "";
-        width: 30px;
-        height: 30px;
-        display: block;
-        background-image: url("../../dist/images/icons/close.svg");
-        background-size: cover;
-    }
-    .lg-download::after {
-        background-image: url("../../dist/images/icons/download.svg"); 
-    }
+.plan-my-day .lg-container {
+  .lg-prev::after {
+    content: "<";
+  }
+  .lg-next::before {
+    content: ">";
+  }
+  .lg-close:after,
+  .lg-download::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    display: block;
+    background-image: url("../../dist/images/icons/close.svg");
+    background-size: cover;
+  }
+  .lg-download::after {
+    background-image: url("../../dist/images/icons/download.svg");
+  }
 }
 //  ===================================== MOBILE =========================================== //
 .plan-my-day {
-    @include phone {
-        #opening {
-            justify-content: center;
-            padding: 10px;
-            .header {
-                img {
-                    width: 35px;
-                }
-                h1 {
-                    font-size: clamp(10px, 1.5vh, 14px);
-                }
-            }
-            .minicard {
-                width: 80%;
-                padding: 0;
-                margin-top: 20px;
-        
-                .card {
-                    max-width: 150px;
-                    width: 60%;
-                    padding: 12px !important;
-                    .card-content {
-                        padding: 10px;
-                    }
-                }
-                .names {
-                    margin-top: 40px;
-                    margin-bottom: 0;
-                    font-size: clamp(20px, 3.5vh, 30px);
-                }
-            }
-            .pmd-ornament-flower {
-                max-width: 150px;
-        
-                .orm-pmd__flower-01 {
-                    left: 50%;
-                    width: 100%;
-                }
-                .orm-pmd__flower-02 {
-                    width: 100%;
-                    top: 90px;
-                    left: -70%;
-                }
-            }
-            .guest {
-                margin-top: 10px;
-            }
-            p {
-                line-height: 1.4;
-                font-size: clamp(9px, 1.5vh, 13px);
-            }
-        
-            h2 {
-                font-size: clamp(14px, 2.4vh, 25px);
-            }
-            button {
-                margin-top: 5vh;
-            }
-        }
-        header {
-            display: block;
-        }
-        .flexbin {
-            display: flex;
-            overflow: hidden;
-            flex-wrap: wrap;
-            margin: -2.5px;
-
-            &:after {
-                content: '';
-                flex-grow: 999999999;
-                min-width: 150px;
-                height: 0
-            }
-            & > * {
-                position: relative;
-                display: block;
-                height: 150px;
-                margin: 2.5px;
-                flex-grow: 1;
-
-                & > img {
-                    height: 150px;
-                    object-fit: cover;
-                    max-width: 100%;
-                    min-width: 100%;
-                    vertical-align: bottom;
-                }
-            }
-            &.flexbin-margin {
-                margin: 2.5px
-            }
-        }
-        .protocols, .story{
-            padding: 50px 10px 20px;
-        }
-        h1 {
-            line-height: 1.5;
-        }
-        section {
-            padding: 50px 0 20px;
-        }
-        #control-music {
-            bottom: 100px;
-            right: 20px;
-            left: unset;
-            width: 45px;
-            height: 45px;
-            &::after {
-                width: 12px;
-                height: 25px;
-                top: 23%;
-            }
-        }
-        .divider-wrapper {
-            margin: 15px auto;
-
-            &.teaser-divider {
-                margin: 50px auto 0;
-            }
-        }
-        .sub-title {
-            line-height: 1.3;
-            margin: 20px 0 40px;
-        }
-        .center-column > .header, 
-        .center-column > .content{
-            width: 90%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .card {
-            width: 80%;
-            max-width: 400px;
-            padding: 18px 18px 65px;
-        
-            .border-card {
-                &.reverse {
-                    &::before {
-                        right: 12px;
-                        bottom: 12px;
-                    }
-                    &::after {
-                        right: 17px;
-                        bottom: 12px;
-                    }
-        
-                }
-            }
-        
-            .card-content {        
-                h1 {
-                    @include titlelatin(25px, $greyColor);
-                    margin-top: 55px;
-                }
-        
-                h2 {
-                    @include subTitle(20px, capitalize);
-                }
-                .details {
-                    padding: 0 5px 0 10px;
-                }
-            }
-        
-        }
-        ._single {
-            padding: 85px 0;
-            .pmd-ornament-flower {
-                .orm-pmd__flower-01 {
-                    @include ornFlower(50%, 50%, 25px);
-                }
-        
-                .orm-pmd__flower-02 {
-                    @include ornFlower(250px, 0, 480px);
-                    transform: rotate(300deg);
-                }
-            }
-        }  
-        ._twin {
-            .content {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .card {
-                width: 90%;
-                padding-bottom: 40px;
-            }
-            .pmd-ornament-flower {
-                height: 100%;
-                max-width: 400px;            
-        
-                .orm-pmd__flower-01 {
-                    @include ornFlower(100%, 0, 45px);
-                    max-width: 450px;
-                }
-                .orm-pmd__flower-03 {
-                    @include ornFlower(170px, 10%, 55%);
-                    transform: rotate(60deg);
-                }
-                .orm-pmd__flower-02 {
-                    @include ornFlower(75%, 23%, 28%);
-                }
-            }
-        }
-        .hero {
-            padding-bottom: 100px;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("../../dist/images/hero-mobile.jpg");
-            .brides-name {
-                padding: 0 10px;
-                font-size: clamp(50px, 16vw, 60px);
-            }
-            .countdown {
-                width: 90%;
-                margin: 140px auto 0;
-
-                .counter {
-                    padding: 15px 5px;
-                    margin: 0;
-                    width: 22%;
-
-                    .time {
-                        font-size: 35px;
-                    }
-                    .desc {
-                        font-size: 10px;
-                        margin: 5px 0 2px;
-                    }
-                }
-            }
-        }
-        .couple .content {
-            grid-template-columns: 100%;
-
-            .grid-profile__photo  {
-                &.groom {
-                    grid-row: 1 / 2;
-                }
-            }
-            .grid-profile__name {
-                padding: 30px;
-            }
-        }
-        .date-maps {
-            iframe {
-                max-height: 400px;
-            }
-        }
-        .story {
-            .content {
-                grid-template-columns: 100%;
-                padding: 50px 0;
-
-                & > div:nth-child(odd)::after {
-                    right: unset;
-                    left: -11px;
-                }
-
-                h1 {
-                    margin-top: 10px;
-                }
-
-                .story-content  {
-                    padding: 0px 60px 50px 35px;
-                    text-align: left;
-                    border-left: 3px solid $greenAlt;
-                    border-right: 0;
-                    &::after {
-                        display: none;
-                    }
-                }
-                .story__photo {
-                    border-left: 3px solid $greenAlt;
-                    border-right: 0;
-
-                    &.first {
-                        grid-row: 1 / 2;
-                        border-right: 0;
-                    }
-                    &.third {
-                        grid-row: 5 / 6;
-                    }
-                    &::before{
-                        top: -25px;
-                        @include dividerRight(right, $greenAlt);
-                        left: 35px;
-                    }
-
-                    &::after {
-                        @include bullet(unset);
-                        left: -12px;
-                    }
-                }
-                .closed::after{
-                    left: -8px !important;
-                }
-            }
-        }
-        .gallery {
-            .teaser {
-                width: 90%;
-
-                iframe {
-                    max-height: 300px;
-                }
-            }
-        } 
-        .gift{
-            padding-bottom: 100px;
-
-            &._twin .pmd-ornament-flower .orm-pmd__flower-03{
-                top: 80%;
-            }
-            .content .details p {
-                font-size: 16px;
-            }
-        }
-        .protocols {
-            .content {
-                grid-template-columns: 50% 50%;
-                padding: 30px 0;
-
-                figure {
-                    padding: 0 20px 10px;
-
-                    img {
-                        width: 100%;
-                        max-width: 150px;
-                    }
-
-                    figcaption {
-                        margin-top: 10px;
-                    }
-                }
-            }
-        } 
-        .ar-rum {
-            margin-top: 30px;
-        }
-        .greeting .content {
-            .form-greeting {
-                padding: 45px 0;
-                gap: 5px;
-
-                .form-group {
-                    width: 100%;
-                    margin-bottom: 10px;
-                }
-            }
-            .greeting-list ul li {
-                margin-bottom: 5px;
-
-                h2 {
-                    font-size: 18px;
-                }
-                .greetcheck  {
-                    font-size: 10px;
-                    text-align: left;
-                    padding: 5px 0;
-                    border-bottom: 1px solid #fff;
-                }
-            }
-        }
-        .minicard {
-            .pmd-ornament-flower,
-            .card {
-                max-width: 250px;
-            }
-            .pmd-ornament-flower {
-                .orm-pmd__flower-02 {
-                    top: 350px;
-                    left: -8px;
-                }
-                .orm-pmd__flower-01 {
-                    left: 55%;
-                    top: 10px;
-                }
-            }
-            .thanks, .names {
-                font-size: 55px;
-                margin-bottom: 0;
-            }
-        }
-        footer {
-            padding-bottom: 100px;
-
-            *{
-                font-size: 12px;
-            }
-        }
-        .prefooter  {
-            .border-card.reverse{
-                &::before{
-                    right: 15px;
-                    bottom: 25px;
-                }
-                &::after {
-                    right: 15px;
-                    bottom: 20px;
-                }
-            }
-        }
+  @include phone {
+    #control-music {
+      bottom: 100px;
+      right: 20px;
+      left: unset;
+      width: 45px;
+      height: 45px;
+      &::after {
+        width: 12px;
+        height: 25px;
+        top: 23%;
+      }
     }
+    .center-column > .header,
+    .center-column > .content {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }
 //  ===================================== Desktop =========================================== //
 .plan-my-day {
-    @include desktop {
-        .card {
-            &.left {
-                padding-bottom: 30px;
-            }
-
-            &.address {
-                padding-bottom: 47px;
-            }
-        
-        }
-    }
+  @include desktop {
+  }
 }

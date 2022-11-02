@@ -6,8 +6,8 @@
     align-items: center;
     flex-direction: column;
 } 
-@mixin titlelatin ($fontSize: 30px, $color: $greyColor){
-    font-family: 'AphroditeSlimText';
+@mixin titlelatin ($fontSize: 30px, $color: $mainColor){
+    font-family: 'BodoniXT';
     font-size: $fontSize;
     color: $color;
     font-weight: 400;
@@ -26,10 +26,11 @@
     display: block;
     position: absolute;
 }
-@mixin subTitle ($size: 35px, $transform: uppercase){
+@mixin generalFont ($size: 14px, $transform: capitalize){
     font-size: $size;
-    font-family: 'now medium';
+    font-family:  'Bludhaven';
     text-transform: $transform;
+    color: $mainColor;
 }
 @mixin sectionCenter {
     max-width: 830px;
@@ -56,13 +57,14 @@
     left: $left;
     top: $top;
 }
-@mixin normalText ($align: justify){
-    margin-top: 10px;
-    color: $greyColor;
-    font-size: 12px;
-    text-align: justify;
-    letter-spacing: 0.02em;
-    line-height: 1.5em;
+@mixin titleTextCommon ($size: 16px){
+    font-size: 16px;
+    font-family: 'Bludhaven';
+    text-transform: uppercase;
+    color: $mainColor;
+    line-height: 18px;
+    max-width: 320px;
+    margin: 0 auto 10px;
 }
 @mixin contentFlex {
     display: flex;
