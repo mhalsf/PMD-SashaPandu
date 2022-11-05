@@ -266,7 +266,7 @@ textarea {
 }
 
 .card.boyongan {
-  margin-top: 45px;
+  margin-top: 55px;
 }
 
 .card.boyongan .date-flex {
@@ -530,6 +530,7 @@ figure.fullwidth iframe {
   position: relative;
   padding-top: 30px;
   max-width: 400px;
+  padding-bottom: 40px;
 }
 
 .countdown .content .countdown-wrapper {
@@ -609,11 +610,26 @@ figure.fullwidth iframe {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: url("../../dist/images/ornaments/pmd-bg_texture.svg");
+  background-image: url("../../dist/images/ornaments/pmd-bg_texture.gif");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: 360px;
   padding-bottom: 20px;
+}
+
+.couple::after {
+  content: "";
+  background: #f5f5f5;
+  width: 100%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.couple > div {
+  z-index: 1;
 }
 
 .couple .sub-header p {
@@ -689,17 +705,18 @@ figure.fullwidth iframe {
   display: -ms-flexbox;
   display: flex;
   gap: 35px;
-  background-image: url("../../dist/images/ornaments/bg-date.svg");
+  background-image: url("../../dist/images/ornaments/bg-date.png");
   background-position: center bottom;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: 360px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-top: 120px;
-  padding-bottom: 17px;
   gap: 0;
+  padding-top: 100px;
+  padding-bottom: 108px;
+  width: 100%;
 }
 
 .date-maps .pmday-button {
@@ -719,7 +736,11 @@ figure.fullwidth iframe {
 }
 
 .date-maps .maps.bottom {
-  margin-top: 64px;
+  margin-top: 80px;
+}
+
+.gallery {
+  margin-top: -80px;
 }
 
 .gallery .content {
@@ -1007,6 +1028,10 @@ figure.fullwidth iframe {
   line-height: 18px;
 }
 
+.prefooter h1 {
+  font-weight: 500;
+}
+
 .prefooter .title {
   text-transform: capitalize !important;
   font-size: 14px !important;
@@ -1015,7 +1040,6 @@ figure.fullwidth iframe {
 .prefooter .sub-title {
   font-family: "RobotoSerif";
   font-size: 12px;
-  max-width: 200px;
   margin-top: 15px;
   margin-bottom: 30px;
 }
@@ -1040,7 +1064,7 @@ figure.fullwidth iframe {
 
 .prefooter .pmd-ornament-flower {
   position: absolute;
-  top: 0;
+  top: -15px;
   z-index: -1;
   width: 100%;
 }
@@ -1084,7 +1108,7 @@ footer * {
   height: 100%;
   position: fixed;
   z-index: 99;
-  background: #fff;
+  background: #f5f5f5;
   text-align: center;
   padding: 10px;
   background-image: url("../../dist/images/galleries/popup-image.png");
@@ -1149,6 +1173,7 @@ footer * {
 .popup-opening .popup-footer .logo {
   -webkit-filter: invert(1);
           filter: invert(1);
+  opacity: 0.3;
 }
 
 .popup-opening .minicard {
@@ -1267,6 +1292,18 @@ footer * {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+  }
+  .plan-my-day .prefooter .pmd-ornament-flower {
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+  }
+  .plan-my-day .prefooter .pmd-ornament-flower img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 100%;
   }
 }
 /*# sourceMappingURL=planmyday.css.map */
