@@ -519,16 +519,16 @@ figure.fullwidth iframe {
       -ms-flex-direction: column;
           flex-direction: column;
   padding-top: 30px;
-  background-image: url("../../dist/images/ornaments/decor_flower_01.svg");
+  background-image: url("../../dist/images/ornaments/decor_flower_01.gif");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: 360px;
 }
 
 .countdown .content {
   width: 85%;
   position: relative;
-  padding-top: 30px;
+  padding-top: 40px;
   max-width: 400px;
   padding-bottom: 40px;
 }

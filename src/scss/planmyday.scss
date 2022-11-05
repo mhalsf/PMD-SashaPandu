@@ -259,15 +259,15 @@ figure.fullwidth {
 .countdown {
   @include section();
   padding-top: 30px;
-  background-image: url("../../dist/images/ornaments/decor_flower_01.svg");
+  background-image: url("../../dist/images/ornaments/decor_flower_01.gif");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: 360px;
 
   .content {
     width: 85%;
     position: relative;
-    padding-top: 30px;
+    padding-top: 40px;
     max-width: 400px;
     padding-bottom: 40px;
 
