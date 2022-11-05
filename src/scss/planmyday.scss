@@ -242,18 +242,14 @@ figure.fullwidth {
 
     svg {
       display: block;
-
-      &.and {
-        position: absolute;
-        right: 35px;
-      }
+      margin: 10px 0 0;
     }
   }
   p {
     @include generalFont(16px, capitalize);
   }
   .date-description {
-    margin: 10px 0 25px;
+    margin: 7px 0 35px;
   }
 }
 .countdown {
@@ -299,6 +295,7 @@ figure.fullwidth {
           bottom: 2px;
           left: 0;
           right: 0;
+          color: $mainColor;
         }
       }
     }
@@ -329,22 +326,12 @@ figure.fullwidth {
 }
 .couple {
   @include section();
-  background-image: url("../../dist/images/ornaments/pmd-bg_texture.gif");
+  background-image: url("../../dist/images/ornaments/pmd-bg_texture.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 360px;
   padding-bottom: 20px;
 
-  &::after {
-    content: "";
-    background: #f5f5f5;
-    width: 100%;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    opacity: 0.6;
-    z-index: 0;
-  }
   & > div {
     z-index: 1;
   }
@@ -410,7 +397,7 @@ figure.fullwidth {
     gap: 0;
     padding-top: 100px;
     padding-bottom: 108px;
-    width: 100%;
+    width: 100% !important;
   }
   .pmday-button {
     margin-top: 20px;
@@ -440,6 +427,14 @@ figure.fullwidth {
       top: 0;
       width: 100%;
       z-index: -1;
+      max-width: 380px;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      img {
+        width: 95%;
+      }
     }
   }
   .gallery-slider {
@@ -454,6 +449,8 @@ figure.fullwidth {
     }
     .slick-slide img {
       margin: auto;
+      width: 100%;
+      max-width: 360px;
     }
 
     .slick-dots {
@@ -659,10 +656,10 @@ figure.fullwidth {
   }
 }
 .prefooter {
-  background-image: url("../../dist/images/ornaments/bg-prefooter.svg");
+  background-image: url("../../dist/images/ornaments/bg-prefooter.png");
   background-position: center bottom;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: 360px;
   text-align: center;
   padding: 0;
   position: relative;
@@ -670,6 +667,23 @@ figure.fullwidth {
   * {
     @include generalFont($size: 14px);
     line-height: 18px;
+  }
+  &::after {
+    content: "";
+    background: #f5f5f5;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0.6;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  & > div,
+  & > img {
+    z-index: 2;
+    position: relative;
   }
   h1 {
     font-weight: 500;
@@ -700,7 +714,7 @@ figure.fullwidth {
   .pmd-ornament-flower {
     position: absolute;
     top: -15px;
-    z-index: -1;
+    z-index: 1;
     width: 100%;
     img {
       width: 100%;

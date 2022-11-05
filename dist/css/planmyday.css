@@ -486,11 +486,7 @@ figure.fullwidth iframe {
 
 .hero .title svg {
   display: block;
-}
-
-.hero .title svg.and {
-  position: absolute;
-  right: 35px;
+  margin: 10px 0 0;
 }
 
 .hero p {
@@ -501,7 +497,7 @@ figure.fullwidth iframe {
 }
 
 .hero .date-description {
-  margin: 10px 0 25px;
+  margin: 7px 0 35px;
 }
 
 .countdown {
@@ -569,6 +565,7 @@ figure.fullwidth iframe {
   bottom: 2px;
   left: 0;
   right: 0;
+  color: #593848;
 }
 
 .countdown .content .pmday-button {
@@ -610,22 +607,11 @@ figure.fullwidth iframe {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: url("../../dist/images/ornaments/pmd-bg_texture.gif");
+  background-image: url("../../dist/images/ornaments/pmd-bg_texture.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 360px;
   padding-bottom: 20px;
-}
-
-.couple::after {
-  content: "";
-  background: #f5f5f5;
-  width: 100%;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  opacity: 0.6;
-  z-index: 0;
 }
 
 .couple > div {
@@ -716,7 +702,7 @@ figure.fullwidth iframe {
   gap: 0;
   padding-top: 100px;
   padding-bottom: 108px;
-  width: 100%;
+  width: 100% !important;
 }
 
 .date-maps .pmday-button {
@@ -753,6 +739,15 @@ figure.fullwidth iframe {
   top: 0;
   width: 100%;
   z-index: -1;
+  max-width: 380px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery .content .pmd-ornament-flower img {
+  width: 95%;
 }
 
 .gallery .gallery-slider:not(.slick-slider) > picture {
@@ -765,6 +760,8 @@ figure.fullwidth iframe {
 
 .gallery .gallery-slider .slick-slide img {
   margin: auto;
+  width: 100%;
+  max-width: 360px;
 }
 
 .gallery .gallery-slider .slick-dots li,
@@ -1011,10 +1008,10 @@ figure.fullwidth iframe {
 }
 
 .prefooter {
-  background-image: url("../../dist/images/ornaments/bg-prefooter.svg");
+  background-image: url("../../dist/images/ornaments/bg-prefooter.png");
   background-position: center bottom;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: 360px;
   text-align: center;
   padding: 0;
   position: relative;
@@ -1026,6 +1023,25 @@ figure.fullwidth iframe {
   text-transform: capitalize;
   color: #593848;
   line-height: 18px;
+}
+
+.prefooter::after {
+  content: "";
+  background: #f5f5f5;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0.6;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.prefooter > div,
+.prefooter > img {
+  z-index: 2;
+  position: relative;
 }
 
 .prefooter h1 {
@@ -1065,7 +1081,7 @@ figure.fullwidth iframe {
 .prefooter .pmd-ornament-flower {
   position: absolute;
   top: -15px;
-  z-index: -1;
+  z-index: 1;
   width: 100%;
 }
 
