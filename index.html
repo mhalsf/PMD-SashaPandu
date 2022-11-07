@@ -19,9 +19,9 @@
     <meta property="og:image" content="dist/images/galleries/popup-image.png" />
     <meta name="author" content="Plan My Day" />
     <!-- css -->
-    <link rel="stylesheet" href="dist/css/planmyday.css" />
-    <link rel="stylesheet" href="dist/vendor/slick/css/slick.css" />
-    <link rel="stylesheet" href="dist/vendor/slick/css/slick-theme.css" />
+    <link rel="stylesheet" href="dist/css/planmyday.min.css" />
+    <link rel="stylesheet" href="dist/vendor/slick/css/slick.min.css" />
+    <link rel="stylesheet" href="dist/vendor/slick/css/slick-theme.min.css" />
     <link rel="stylesheet" href="dist/vendor/aos/css/aos.min.css" />
     <title>Sasha &amp; Pandu's Wedding</title>
   </head>
@@ -144,7 +144,11 @@
 
         <p><b>01.12.22</b></p>
       </div>
-      <div class="minicard" role="aside"></div>
+      <div class="minicard" role="aside">
+        <picture>
+          <img src="dist/images/galleries/cover-image.png" width="300" alt="cover image" />
+        </picture>
+      </div>
       <div class="guest">
         <p>Kepada Yth.</p>
         <h2 class="tamu-name">...</h2>
@@ -1156,11 +1160,11 @@
     </footer>
     <!-- Scripts -->
     <script src="dist/vendor/slick/js/jquery-3.4.1.min.js"></script>
-    <script src="dist/vendor/slick/js/slick.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="dist/vendor/slick/js/slick.min.js"></script>
+    <script src="dist/js/firebase-app.min.js"></script>
+    <script src="dist/js/firebase-database.min.js"></script>
     <script src="dist/vendor/aos/js/aos.min.js"></script>
     <script src="dist/js/config.min.js"></script>
-    <script src="src/js/planmyday.js"></script>
+    <script src="dist/js/planmyday.min.js"></script>
   </body>
 </html>

@@ -746,13 +746,9 @@ footer {
   background: #f5f5f5;
   text-align: center;
   padding: 10px;
-  background-image: url("../../dist/images/galleries/popup-image.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 360px;
 
   .subheader {
-    margin-bottom: 20px;
+    margin-bottom: -40px;
     margin-top: 3vh;
 
     img {
@@ -799,11 +795,18 @@ footer {
       opacity: 0.3;
     }
   }
+  .guest {
+    margin-top: -80px;
+  }
   .minicard {
-    width: 186px;
-    height: 261px;
+    width: 41vh;
+    max-width: 320px;
     display: block;
     margin: 10px auto;
+
+    img {
+      width: 100%;
+    }
   }
   h1 {
     font-size: 25px;
@@ -811,7 +814,7 @@ footer {
   p {
     @include generalFont(20px, capitalize);
     line-height: 18px;
-    margin: 5px;
+    margin: 5px auto;
     font-size: 14px;
     max-width: 300px;
   }
